@@ -1,27 +1,27 @@
 class Skillmeister < Formula
   desc "Local library of agent skills with one router entry point"
   homepage "https://github.com/shantanugoel/skillmeister"
-  version "0.2.0"
+  version "0.2.1"
 
   on_macos do
     on_arm do
-      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.0/skillmeister_0.2.0_darwin_arm64.tar.gz"
-      sha256 "0226b404e4b893e2dac9d9255af98d988fe170eda1c7fa92aee66bfa3ee2a7d9"
+      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.1/skillmeister_0.2.1_darwin_arm64.tar.gz"
+      sha256 "c20bcacca39fa54032c0f2ed18c763f7d4624466d66da8a2f546c0967a87dd6b"
     end
     on_intel do
-      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.0/skillmeister_0.2.0_darwin_amd64.tar.gz"
-      sha256 "414bb24f6e2953821b8249967e68a7f04abef75dd0e37c7db18576a376244b7e"
+      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.1/skillmeister_0.2.1_darwin_amd64.tar.gz"
+      sha256 "2eaa67614a580dee4804ee205bbccb1c3047be42e14a2be251468d285d160616"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.0/skillmeister_0.2.0_linux_arm64.tar.gz"
-      sha256 "58d5bb79e048fac44c307774d988d33efab73eb495dedf64f9960d785d88863b"
+      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.1/skillmeister_0.2.1_linux_arm64.tar.gz"
+      sha256 "1bd28a0627d9ee0889a08d3e1ae758f30d057ee45612da672d230e9b5a211942"
     end
     on_intel do
-      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.0/skillmeister_0.2.0_linux_amd64.tar.gz"
-      sha256 "dc8a3d7e73b46c843bf4b5964351732652567c92ff40203b3e21182b1f356779"
+      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.1/skillmeister_0.2.1_linux_amd64.tar.gz"
+      sha256 "98025c5654efb2ccc3ad71cf50dac743fc6668d931c9fcd585b05482d18fc9bf"
     end
   end
 
@@ -40,10 +40,13 @@ class Skillmeister < Formula
       for Claude Code and OpenCode, and adds one line to their memory files.
       It is safe to run again. Use `skillmeister --library PATH init` to put
       the library somewhere else.
+
+      After an upgrade, run `skillmeister init` again if `skillmeister doctor`
+      reports shim-stale.
     EOS
   end
 
   test do
-    assert_match "skillmeister v0.2.0", shell_output("#{bin}/skillmeister --version")
+    assert_match "skillmeister v0.2.1", shell_output("#{bin}/skillmeister --version")
   end
 end
