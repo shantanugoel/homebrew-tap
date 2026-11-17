@@ -1,27 +1,27 @@
 class Skillmeister < Formula
   desc "Local library of agent skills with one router entry point"
   homepage "https://github.com/shantanugoel/skillmeister"
-  version "0.2.1"
+  version "0.2.2"
 
   on_macos do
     on_arm do
-      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.1/skillmeister_0.2.1_darwin_arm64.tar.gz"
-      sha256 "c20bcacca39fa54032c0f2ed18c763f7d4624466d66da8a2f546c0967a87dd6b"
+      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.2/skillmeister_0.2.2_darwin_arm64.tar.gz"
+      sha256 "bc667cc17a353686103ea8d2308b3ec4ec14a32971ce2c18acf92ca7521de324"
     end
     on_intel do
-      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.1/skillmeister_0.2.1_darwin_amd64.tar.gz"
-      sha256 "2eaa67614a580dee4804ee205bbccb1c3047be42e14a2be251468d285d160616"
+      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.2/skillmeister_0.2.2_darwin_amd64.tar.gz"
+      sha256 "0f79d2f9efaefdace0f1df9de0b54e558b03099f5b9fe84dbd0dd5d10e7533c4"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.1/skillmeister_0.2.1_linux_arm64.tar.gz"
-      sha256 "1bd28a0627d9ee0889a08d3e1ae758f30d057ee45612da672d230e9b5a211942"
+      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.2/skillmeister_0.2.2_linux_arm64.tar.gz"
+      sha256 "a867127944b45057fd81635d4a7768320d9d422f60e642bcd4e167c032e929ed"
     end
     on_intel do
-      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.1/skillmeister_0.2.1_linux_amd64.tar.gz"
-      sha256 "98025c5654efb2ccc3ad71cf50dac743fc6668d931c9fcd585b05482d18fc9bf"
+      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.2/skillmeister_0.2.2_linux_amd64.tar.gz"
+      sha256 "8fb8a912248d3f4632d1baf6bf500b657103173337f0cb25fdbef24bbe8b6e3e"
     end
   end
 
@@ -36,8 +36,8 @@ class Skillmeister < Formula
 
         skillmeister init
 
-      It creates the library at ~/.skillmeister, writes the skillmeister skill
-      for Claude Code and OpenCode, and adds one line to their memory files.
+      It creates the library at ~/.skillmeister and writes the skillmeister
+      skill for Claude Code, OpenCode, and other agents that read ~/.agents.
       It is safe to run again. Use `skillmeister --library PATH init` to put
       the library somewhere else.
 
@@ -47,6 +47,6 @@ class Skillmeister < Formula
   end
 
   test do
-    assert_match "skillmeister v0.2.1", shell_output("#{bin}/skillmeister --version")
+    assert_match "skillmeister v0.2.2", shell_output("#{bin}/skillmeister --version")
   end
 end
