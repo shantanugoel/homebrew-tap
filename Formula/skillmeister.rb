@@ -1,27 +1,27 @@
 class Skillmeister < Formula
   desc "Local library of agent skills with one router entry point"
   homepage "https://github.com/shantanugoel/skillmeister"
-  version "0.1.0"
+  version "0.2.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.1.0/skillmeister_0.1.0_darwin_arm64.tar.gz"
-      sha256 "f63d34e5ee4327898dafb01491d911a20593dd74a76cf05ea11a0a39d2e05fef"
+      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.0/skillmeister_0.2.0_darwin_arm64.tar.gz"
+      sha256 "0226b404e4b893e2dac9d9255af98d988fe170eda1c7fa92aee66bfa3ee2a7d9"
     end
     on_intel do
-      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.1.0/skillmeister_0.1.0_darwin_amd64.tar.gz"
-      sha256 "7e5d3bf25dc61ecda1b0b037d2248898f48586c02f3b348f125634f1c27355c4"
+      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.0/skillmeister_0.2.0_darwin_amd64.tar.gz"
+      sha256 "414bb24f6e2953821b8249967e68a7f04abef75dd0e37c7db18576a376244b7e"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.1.0/skillmeister_0.1.0_linux_arm64.tar.gz"
-      sha256 "aecbc483088bdacdf9afeaee29fb5c966f2c77d1a9f283758b5c5785a6b19584"
+      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.0/skillmeister_0.2.0_linux_arm64.tar.gz"
+      sha256 "58d5bb79e048fac44c307774d988d33efab73eb495dedf64f9960d785d88863b"
     end
     on_intel do
-      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.1.0/skillmeister_0.1.0_linux_amd64.tar.gz"
-      sha256 "671386d0f45ff30fb1042803ce65c67d90356fe775eb28c301be1931fde73711"
+      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.0/skillmeister_0.2.0_linux_amd64.tar.gz"
+      sha256 "dc8a3d7e73b46c843bf4b5964351732652567c92ff40203b3e21182b1f356779"
     end
   end
 
@@ -32,18 +32,18 @@ class Skillmeister < Formula
 
   def caveats
     <<~EOS
-      This installs the skillmeister binary. A library is a git repo with a
-      skillmeister.yaml. To make one, clone the project and run its installer:
+      Run this once to create your skill library and set up your agents:
 
-        git clone https://github.com/shantanugoel/skillmeister ~/dev/skillmeister
-        ~/dev/skillmeister/scripts/install.sh
+        skillmeister init
 
-      The installer builds its own binary and renders the agent shim. Use the
-      Homebrew binary with `skillmeister --library PATH` for other libraries.
+      It creates the library at ~/.skillmeister, writes the skillmeister skill
+      for Claude Code and OpenCode, and adds one line to their memory files.
+      It is safe to run again. Use `skillmeister --library PATH init` to put
+      the library somewhere else.
     EOS
   end
 
   test do
-    assert_match "skillmeister v0.1.0", shell_output("#{bin}/skillmeister --version")
+    assert_match "skillmeister v0.2.0", shell_output("#{bin}/skillmeister --version")
   end
 end
