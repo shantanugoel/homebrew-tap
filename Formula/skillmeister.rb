@@ -1,27 +1,27 @@
 class Skillmeister < Formula
   desc "Local library of agent skills with one router entry point"
   homepage "https://github.com/shantanugoel/skillmeister"
-  version "0.2.3"
+  version "0.3.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.3/skillmeister_0.2.3_darwin_arm64.tar.gz"
-      sha256 "ca446df1bad67f2bd8b5c5e03f9f1a0819770688066dbff20b68cbe6ccb20682"
+      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.3.0/skillmeister_0.3.0_darwin_arm64.tar.gz"
+      sha256 "1d74b4e421065c1581f16004402e48d7b9d3f521735e1d54e875fa5d31231ff3"
     end
     on_intel do
-      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.3/skillmeister_0.2.3_darwin_amd64.tar.gz"
-      sha256 "78743f9b937e0b6b6a8dd45160813bc3d5e99507d4ad58d482f402a3e68c8ac2"
+      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.3.0/skillmeister_0.3.0_darwin_amd64.tar.gz"
+      sha256 "0f2f3ea87ad3db54c083ac3aab046fc5eeea8d6a162b7dc7e599649f4317efaa"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.3/skillmeister_0.2.3_linux_arm64.tar.gz"
-      sha256 "272a035ed7f177cfdaf7cb7bf88cce425e07777e1b1e035c0e302cfb2727d670"
+      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.3.0/skillmeister_0.3.0_linux_arm64.tar.gz"
+      sha256 "b6c11903ef4a0d2d050688fde10637ddcccd4a9a2041e1045f6ca7f73b0d2766"
     end
     on_intel do
-      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.2.3/skillmeister_0.2.3_linux_amd64.tar.gz"
-      sha256 "d80a7eb7ef08d52cf8fee11ef03028081760d96d980e4b06ab0674b057f7a928"
+      url "https://github.com/shantanugoel/skillmeister/releases/download/v0.3.0/skillmeister_0.3.0_linux_amd64.tar.gz"
+      sha256 "01da969e70d6c1f16567f44253e7cf25e20a2427c0fbd634d09c085fefc23218"
     end
   end
 
@@ -47,6 +47,6 @@ class Skillmeister < Formula
   end
 
   test do
-    assert_match "skillmeister v0.2.3", shell_output("#{bin}/skillmeister --version")
+    assert_match "skillmeister v0.3.0", shell_output("#{bin}/skillmeister --version")
   end
 end
